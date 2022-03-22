@@ -3,27 +3,27 @@ package main
 import "fmt"
 
 func main() {
-  var x int = 1
-  var y int
-  var ip *int
+	var x int = 1
+	var y int
+	var ip *int
 
-  fmt.Println(x,y,ip)
+	fmt.Println(x, y, ip)
 
-  ip = &x
+	ip = &x
 
-  fmt.Println(x,y,ip)
+	fmt.Println(x, y, ip)
 
-  y = *ip
+	y = *ip
 
-	fmt.Println(x,y,ip)
+	fmt.Println(x, y, ip)
 
-  ptr := new(int)
+	ptr := new(int)
 
-  fmt.Println(ptr)
+	fmt.Println(ptr)
 
-  *ptr = 3
+	*ptr = 3
 
-  fmt.Println(ptr,*ptr)
+	fmt.Println(ptr, *ptr)
 
-  fmt.Println(x+y+*ptr)
+	fmt.Println(x + y + *ptr)
 }
