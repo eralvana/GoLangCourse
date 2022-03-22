@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-  //Esto lo haremos para que cuando se tenga una entrada con espacios se borren y quede solamente como un arreglo de letras sin espacios
+  //Esto lo haremos para que cuando se tenga una entrada con espacios se borren y quede solamente como un arreglo de letras con espacios
 
   x := bufio.NewReader(os.Stdin)
   fmt.Println("Give me a string and press enter:")
