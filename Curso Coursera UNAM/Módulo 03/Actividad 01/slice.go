@@ -82,6 +82,7 @@ func main() {
 		}
 
 		s = append(s, z)
+		fmt.Printf("At this time, your slice is %v and the sorted slice is %v\n", s, sortedSlice(s))
 	}
 	fmt.Printf("Your slice is %v and the sorted slice is %v\n", s, sortedSlice(s))
 }
