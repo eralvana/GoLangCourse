@@ -29,26 +29,21 @@ func main() {
 
 	fileScanner.Split(bufio.ScanLines)
 
-	slc := make(map[string][]string)
+	var slc []Person
 
 	for fileScanner.Scan() {
 		line := fileScanner.Text()
 		wordinaline := strings.Fields(line)
-		slc[line] = []string{wordinaline[0], wordinaline[1]}
+		slc = append(slc, Person{
+			Fname: wordinaline[0],
+			Lname: wordinaline[1],
+		})
 	}
 	readFile.Close()
 
-	var slcstruc []Person
-
-	for _, v := range slc {
-		slcstruc = append(slcstruc, Person{
-			Fname: v[0],
-			Lname: v[1],
-		})
-	}
-	fmt.Println("The slice of structurs is", slcstruc, "and the list is")
-	for k, _ := range slc {
-		fmt.Println(slc[k][0], slc[k][1])
+	fmt.Println("The slice of structurs is", slc, "and the list is")
+	for k := range slc {
+		fmt.Println(slc[k].Fname, slc[k].Lname)
 
 	}
 }
