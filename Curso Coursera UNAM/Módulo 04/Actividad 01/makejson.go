@@ -9,31 +9,40 @@ import (
 )
 
 type Person struct {
-	name    string
-	address string
+	Name    string
+	Address string
 }
 
 func main() {
 	// Primer instrucción para el usuario
 	fmt.Println("Input your name and press enter:")
 	x := bufio.NewReader(os.Stdin)
-
-	y, _ := x.ReadString('\n')
-
+	y, erry := x.ReadString('\n')
+	if erry != nil {
+		fmt.Println("There is an error.")
+		return
+	}
 	y = strings.TrimRight(y, "\n")
 
 	fmt.Println("Input your address and press enter:")
 	u := bufio.NewReader(os.Stdin)
-
-	v, _ := u.ReadString('\n')
-
+	v, errv := u.ReadString('\n')
+	if errv != nil {
+		fmt.Println("There is an error.")
+		return
+	}
 	v = strings.TrimRight(v, "\n")
-	p := map[string]string{
-		"name":    y,
-		"address": v,
+
+	p := Person{
+		Name:    y,
+		Address: v,
 	}
 
-	r, _ := json.Marshal(p)
+	r, errr := json.Marshal(p)
+	if errr != nil {
+		fmt.Println("There is an error.")
+		return
+	}
 
 	fmt.Println(string(r))
 }
