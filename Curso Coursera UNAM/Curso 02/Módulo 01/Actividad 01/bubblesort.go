@@ -10,7 +10,7 @@ import (
 
 func BubbleSort(slcint []int) {
 
-	for i, _ := range slcint {
+	for i := range slcint {
 		min := IndexMinSlc(slcint[i:])
 		for j := min; j > 0; j-- {
 			Swap(slcint[i:], j-1)
