@@ -31,7 +31,7 @@ func main() {
 	mapInfo["bird"] = Animal{food: "worms", locomotion: "fly", noise: "peep"}
 	mapInfo["snake"] = Animal{food: "mice", locomotion: "slither", noise: "hsss"}
 
-	fmt.Println("Indicate, in that order, the name of the animal (cow, bird or snake) and what you would like to know about it (eat, move or speak) and press enter:")
+	fmt.Printf("Indicate, in that order, the name of the animal (cow, bird or snake) and what you would like to know about it (eat, move or speak) and press enter:>")
 	input := bufio.NewReader(os.Stdin)
 	info, err := input.ReadString('\n')
 	if err != nil {
@@ -62,7 +62,7 @@ func main() {
 			}
 		}
 
-		fmt.Println("Try again! Indicate, in that order, the name of the animal (cow, bird or snake) and what you would like to know about it (eat, move or speak) and press enter or type X and press enter to exit:")
+		fmt.Printf("Try again! Indicate, in that order, the name of the animal (cow, bird or snake) and what you would like to know about it (eat, move or speak) and press enter or type X and press enter to exit:>")
 		input = bufio.NewReader(os.Stdin)
 		info, err := input.ReadString('\n')
 		if err != nil {
