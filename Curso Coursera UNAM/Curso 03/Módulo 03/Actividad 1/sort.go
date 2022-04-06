@@ -72,6 +72,12 @@ func main() {
 			map4slc[3] = slc[3*div+3:]
 
 		}
+		fmt.Println("Your slice to be sorted is:", slc)
+		fmt.Println("The partition of the original slice is:")
+		fmt.Printf("Slice 1: %v \n", map4slc[0])
+		fmt.Printf("Slice 2: %v \n", map4slc[1])
+		fmt.Printf("Slice 3: %v \n", map4slc[2])
+		fmt.Printf("Slice 4: %v \n", map4slc[3])
 
 		channel := make(chan []int, 2)
 		wg1 := sync.WaitGroup{}
